@@ -88,6 +88,7 @@ const Peer = window.Peer;
       console.log(`ここはソース${src}`);
 
       // dataにはvalueの値が入っている？
+      // ここで相手側のCSSを変更
       if(data == 1){
         document.getElementById('testDiv').style.backgroundColor = 'red';
       }
@@ -137,7 +138,7 @@ const Peer = window.Peer;
     //   localVideo.srcObject = stream;
     // }
 
-    
+
     // CSSの変更
 
     let valueCSS = "0";
@@ -149,6 +150,7 @@ const Peer = window.Peer;
       room.send(valueCSS);
       console.log(`ここはCSS${valueCSS}`);
 
+      // ここで自分側のCSSを変更
       if(valueCSS == 1){
         document.getElementById('testDiv').style.backgroundColor = 'red';
       }
