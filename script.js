@@ -44,7 +44,7 @@ const Peer = window.Peer;
 
 
     // ここにAPI keyを入れてね★
-    key: '',
+    key: '1a50df5c-005b-4e50-be24-40dfabe6415c',
     debug: 3,
   }));
 
@@ -79,9 +79,18 @@ const Peer = window.Peer;
       await newVideo.play().catch(console.error);
     });
 
-    room.on('data', ({ data, src }) => {
+    room.on('data', ({ data, src}) => {
       // Show a message sent to the room and who sent
       messages.textContent += `${src}: ${data}\n`;
+
+      // ここでCSSを変更！
+      console.log(`ここはデータ${data}`);
+      console.log(`ここはソース${src}`);
+
+      // dataにはvalueの値が入っている？
+      if(data == 1){
+        document.getElementById('testDiv').style.backgroundColor = 'red';
+      }
     });
 
     // for closing room members
@@ -117,7 +126,37 @@ const Peer = window.Peer;
       messages.textContent += `${peer.id}: ${localText.value}\n`;
       localText.value = '';
     }
+
+    // 画面共有
+    // document.getElementById('getDisplay').addEventListener('click', getDisplay);
+
+    // function getDisplay(){
+    //   const stream = navigator.mediaDevices.getDisplayMedia({ video: true });
+    //   const call = peer.call("remote-peerId", stream);
+
+    //   localVideo.srcObject = stream;
+    // }
+
+    
+    // CSSの変更
+
+    let valueCSS = "0";
+
+    document.getElementById('testCss').addEventListener('click', changeCSS);
+
+    function changeCSS(){
+      valueCSS = document.getElementById('testCss').value;
+      room.send(valueCSS);
+      console.log(`ここはCSS${valueCSS}`);
+
+      if(valueCSS == 1){
+        document.getElementById('testDiv').style.backgroundColor = 'red';
+      }
+    }
+
+
   });
+
 
   peer.on('error', console.error);
 })();
