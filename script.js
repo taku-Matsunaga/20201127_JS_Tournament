@@ -39,12 +39,47 @@ const Peer = window.Peer;
   localVideo.playsInline = true;
   await localVideo.play().catch(console.error);
 
+    // 自分をミュートにする
+    // トラックを取り出す
+    var videoTrackMe = localStream.getVideoTracks()[0];
+    var audioTrackMe = localStream.getAudioTracks()[0];
+    const MyMuteVoiceBtn = document.getElementById('MyMuteVoiceBtn');
+    const MyMuteVideoBtn = document.getElementById('MyMuteVideoBtn');
+
+    MyMuteVoiceBtn.addEventListener('click', muteMyVoice);
+    MyMuteVideoBtn.addEventListener('click', muteMyVideo);
+
+    // Voiceのミュート切り替え
+    function muteMyVoice(){
+
+      if(MyMuteVoiceBtn.classList.contains('setMute')){
+        audioTrackMe.enabled = true;
+        MyMuteVoiceBtn.classList.toggle('setMute');
+      }else{
+        MyMuteVoiceBtn.classList.toggle('setMute');
+        audioTrackMe.enabled = false;
+      }
+    }
+
+    // Videoのミュート切り替え
+    function muteMyVideo(){
+
+      if(MyMuteVideoBtn.classList.contains('setMute')){
+        videoTrackMe.enabled = true;
+        MyMuteVideoBtn.classList.toggle('setMute');
+      }else{
+        videoTrackMe.enabled = false;
+        MyMuteVideoBtn.classList.toggle('setMute');
+      }
+    }
+
+
   // eslint-disable-next-line require-atomic-updates
   const peer = (window.peer = new Peer({
 
 
     // ここにAPI keyを入れてね★
-    key: '1b74af05-ac7f-4b24-a6ff-dedb7ce9ee54',
+    key: '1a50df5c-005b-4e50-be24-40dfabe6415c',
     debug: 3,
   }));
 
@@ -77,6 +112,42 @@ const Peer = window.Peer;
       newVideo.setAttribute('data-peer-id', stream.peerId);
       remoteVideos.append(newVideo);
       await newVideo.play().catch(console.error);
+
+    // 相手をミュートにする
+    // トラックを取り出す
+    var videoTrack = stream.getVideoTracks()[0];
+    var audioTrack = stream.getAudioTracks()[0];
+
+    const MuteVoiceBtn = document.getElementById('muteVoiceBtn');
+    const MuteVideoBtn = document.getElementById('muteVideoBtn');
+
+    MuteVoiceBtn.addEventListener('click', muteVoice);
+    MuteVideoBtn.addEventListener('click', muteVideo);
+
+    // Voiceのミュート切り替え
+    function muteVoice(){
+
+      if(MuteVoiceBtn.classList.contains('setMute')){
+        audioTrack.enabled = true;
+        MuteVoiceBtn.classList.toggle('setMute');
+      }else{
+        MuteVoiceBtn.classList.toggle('setMute');
+        audioTrack.enabled = false;
+      }
+    }
+
+    // Videoのミュート切り替え
+    function muteVideo(){
+
+      if(MuteVideoBtn.classList.contains('setMute')){
+        videoTrack.enabled = true;
+        MuteVideoBtn.classList.toggle('setMute');
+      }else{
+        videoTrack.enabled = false;
+        MuteVideoBtn.classList.toggle('setMute');
+      }
+    }
+
     });
 
     room.on('data', ({ data, src }) => {
