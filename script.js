@@ -44,7 +44,7 @@ const Peer = window.Peer;
 
 
     // ここにAPI keyを入れてね★
-    key: '1a50df5c-005b-4e50-be24-40dfabe6415c',
+    key: '1b74af05-ac7f-4b24-a6ff-dedb7ce9ee54',
     debug: 3,
   }));
 
@@ -107,7 +107,7 @@ const Peer = window.Peer;
       });
     });
 
-    sendTrigger.addEventListener('click', onClickSend);
+    // sendTrigger.addEventListener('click', onClickSend);
     leaveTrigger.addEventListener('click', () => room.close(), { once: true });
 
     function onClickSend() {
@@ -116,7 +116,32 @@ const Peer = window.Peer;
 
       messages.textContent += `${peer.id}: ${localText.value}\n`;
       localText.value = '';
+
+
     }
+
+    const anime = document.getElementById('anime');
+    let animetext = 0;
+
+    const animebtn = document.getElementById('animebtn');
+    animebtn.addEventListener('click', animetion);
+    function animetion() {
+      animetext++;
+      room.send(animetext);
+    };
+
+    function anime1() {
+      anime.textContent += `${animetext}\n`;
+      anime.style.backgroundColor = '#00ffff';
+    };
+
+
+    if (messages.textContent == 1) {
+      anime.textContent += `${animetext}\n`;
+      anime.style.backgroundColor = '#00ffff';
+    };
+
+
 
   });
 

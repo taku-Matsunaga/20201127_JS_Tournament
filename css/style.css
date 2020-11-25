@@ -1,0 +1,118 @@
+/* オープニングアニメーション */
+
+.top3{
+  background-image: url(../img/top.jpg);
+  background-size:cover;
+  width: 100%;
+  height: 100vh;
+  animation: fadeIn 7s ease 0.3s 1 normal;
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+}
+
+@keyframes fadeIn { 
+  0% {opacity: 0}
+  50% {opacity: 1;}
+  100% {opacity: 0;
+  } 
+}
+
+.top2{
+  background-image: url(../img/IMG_3040.jpg);
+  background-size:cover;
+  width: 100%;
+  height: 100vh;
+  animation: fadeIn 7s ease 7s 1 normal;
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+}
+
+/* @keyframes fadeIn {
+  0% {opacity: 0} 
+  50% {opacity: 1;}
+  100% {opacity: 0;
+  } 
+} */
+
+.top3{
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo{
+  position: absolute;
+  margin-left: 42%;
+  margin-top: 15%;
+  width: auto;
+  height: 30%;
+  z-index: 3;
+}
+
+
+/* ビデオエリア */
+
+.video_box{
+  display: flex;
+  justify-content: space-around;  
+  width: 100%;
+}
+
+.myvideo_box{
+  background-color: #dceef8;
+  display: flex;
+  flex-direction: column;
+  width: 42%;
+}
+
+.myvideo{
+  width: 100%;
+}
+
+.yourvideo{
+  background-color: #dceef8;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width: 42%;
+}
+
+.remote-streams{
+  width: 100%;
+}
+
+.remote-streams video{
+  width: 100%;
+
+}
+
+/* チャットエリア */
+
+.messages_box{
+width: 16%;
+height: 90vh;
+background-color: #bee1f5;
+display: flex;
+
+align-items: flex-end;
+
+}
+
+.input{
+height: 100px;
+background-color: cornflowerblue;
+}
+
+.chattext{
+  height: 60px;
+  width: 100%;
+  border: solid;
+  border-width: 2px;
+  border-color: darkblue;
+}
