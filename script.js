@@ -44,7 +44,7 @@ const Peer = window.Peer;
 
 
     // ここにAPI keyを入れてね★
-    key: '',
+    key: '1a50df5c-005b-4e50-be24-40dfabe6415c',
     debug: 3,
   }));
 
@@ -117,6 +117,7 @@ const Peer = window.Peer;
       messages.textContent += `${peer.id}: ${localText.value}\n`;
       localText.value = '';
     }
+
   });
 
   peer.on('error', console.error);
