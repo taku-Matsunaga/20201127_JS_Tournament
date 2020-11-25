@@ -43,23 +43,36 @@ const Peer = window.Peer;
     // トラックを取り出す
     var videoTrackMe = localStream.getVideoTracks()[0];
     var audioTrackMe = localStream.getAudioTracks()[0];
+    const MyMuteVoiceBtn = document.getElementById('MyMuteVoiceBtn');
+    const MyMuteVideoBtn = document.getElementById('MyMuteVideoBtn');
 
-    document.getElementById('mymuteBtn').addEventListener('click', muteOn);
-    document.getElementById('myunmuteBtn').addEventListener('click', muteOff);
+    MyMuteVoiceBtn.addEventListener('click', muteMyVoice);
+    MyMuteVideoBtn.addEventListener('click', muteMyVideo);
 
-    function muteOn(){
-      // muteする
-      videoTrackMe.enabled = false;
-      audioTrackMe.enabled = false;
-      console.log('クリックしました');
+    // Voiceのミュート切り替え
+    function muteMyVoice(){
+
+      if(MyMuteVoiceBtn.classList.contains('setMute')){
+        audioTrackMe.enabled = true;
+        MyMuteVoiceBtn.classList.toggle('setMute');
+      }else{
+        MyMuteVoiceBtn.classList.toggle('setMute');
+        audioTrackMe.enabled = false;
+      }
     }
 
-    function muteOff(){
-      // unmuteする
-      videoTrackMe.enabled = true
-      audioTrackMe.enabled = true
-      console.log('クリックしました');
+    // Videoのミュート切り替え
+    function muteMyVideo(){
+
+      if(MyMuteVideoBtn.classList.contains('setMute')){
+        videoTrackMe.enabled = true;
+        MyMuteVideoBtn.classList.toggle('setMute');
+      }else{
+        videoTrackMe.enabled = false;
+        MyMuteVideoBtn.classList.toggle('setMute');
+      }
     }
+
 
   // eslint-disable-next-line require-atomic-updates
   const peer = (window.peer = new Peer({
@@ -105,21 +118,34 @@ const Peer = window.Peer;
     var videoTrack = stream.getVideoTracks()[0];
     var audioTrack = stream.getAudioTracks()[0];
 
-    document.getElementById('muteBtn').addEventListener('click', muteOn)
-    document.getElementById('unmuteBtn').addEventListener('click', muteOff)
+    const MuteVoiceBtn = document.getElementById('muteVoiceBtn');
+    const MuteVideoBtn = document.getElementById('muteVideoBtn');
 
-    function muteOn(){
-      // muteする
-      videoTrack.enabled = false;
-      audioTrack.enabled = false;
-      console.log('クリックしました');
+    MuteVoiceBtn.addEventListener('click', muteVoice);
+    MuteVideoBtn.addEventListener('click', muteVideo);
+
+    // Voiceのミュート切り替え
+    function muteVoice(){
+
+      if(MuteVoiceBtn.classList.contains('setMute')){
+        audioTrack.enabled = true;
+        MuteVoiceBtn.classList.toggle('setMute');
+      }else{
+        MuteVoiceBtn.classList.toggle('setMute');
+        audioTrack.enabled = false;
+      }
     }
 
-    function muteOff(){
-      // unmuteする
-      videoTrack.enabled = true
-      audioTrack.enabled = true
-      console.log('クリックしました');
+    // Videoのミュート切り替え
+    function muteVideo(){
+
+      if(MuteVideoBtn.classList.contains('setMute')){
+        videoTrack.enabled = true;
+        MuteVideoBtn.classList.toggle('setMute');
+      }else{
+        videoTrack.enabled = false;
+        MuteVideoBtn.classList.toggle('setMute');
+      }
     }
 
     });
