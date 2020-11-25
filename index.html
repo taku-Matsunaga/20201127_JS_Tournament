@@ -31,10 +31,24 @@
 
         <div class="myvideo_box">
           <video id="js-local-stream" class="myvideo"></video>
+          <!-- 自分のボタン -->
+          <div class="mybtn">
+            <button type="button" id="testCss" value="1" class="sepia"></button>
+            <button type="button" id="MyMuteVoiceBtn" class="voiceon"></button>
+            <button type="button" id="MyMuteVideoBtn" class="videoon"></button>
+            <button class="share"></button>
+          </div>
+
         </div>
 
         <div class="yourvideo">
           <div class="remote-streams" id="js-remote-streams"></div>
+          <!-- 相手のボタン -->
+
+          <div class="otherbtn">
+            <button type="button" id="muteVoiceBtn" class="voiceon"></button>
+            <button type="button" id="muteVideoBtn" class="videoon"></button>
+          </div>
         </div>
 
         <div class="messages_box">
@@ -47,23 +61,6 @@
 
       </div>
 
-      <!-- ボタンエリア -->
-      <div>
-        <ul>
-          <li><button>cheer</button></li>
-          <li><button>★</button></li>
-          <li><button>💛</button></li>
-        </ul>
-        <li><button>video</button></li>
-        <li><button>mute</button></li>
-        <ul>
-          <ul>
-            <li><button>leave</button></li>
-            <li><button>leave</button></li>
-          </ul>
-
-        </ul>
-      </div>
 
 
 
@@ -87,11 +84,7 @@
   <script src="script.js"></script>
 
 
-  <!-- 花火アニメーション -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js"></script>
-  <script src="js/particle.js"></script>
-  <script src="js/fireworks.js"></script>
-  <script src="js/skech.js"></script> -->
+
 </body>
 
 </html>

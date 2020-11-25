@@ -39,12 +39,52 @@ const Peer = window.Peer;
   localVideo.playsInline = true;
   await localVideo.play().catch(console.error);
 
+  // 自分をミュートにする
+  // トラックを取り出す
+  var videoTrackMe = localStream.getVideoTracks()[0];
+  var audioTrackMe = localStream.getAudioTracks()[0];
+  const MyMuteVoiceBtn = document.getElementById('MyMuteVoiceBtn');
+  const MyMuteVideoBtn = document.getElementById('MyMuteVideoBtn');
+
+  MyMuteVoiceBtn.addEventListener('click', muteMyVoice);
+  MyMuteVideoBtn.addEventListener('click', muteMyVideo);
+
+  // Voiceのミュート切り替え
+  function muteMyVoice() {
+
+    if (MyMuteVoiceBtn.classList.contains('setMute')) {
+      audioTrackMe.enabled = true;
+      MyMuteVoiceBtn.classList.toggle('setMute');
+      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+
+    } else {
+      MyMuteVoiceBtn.classList.toggle('setMute');
+      audioTrackMe.enabled = false;
+      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+    }
+  }
+
+  // Videoのミュート切り替え
+  function muteMyVideo() {
+
+    if (MyMuteVideoBtn.classList.contains('setMute')) {
+      videoTrackMe.enabled = true;
+      MyMuteVideoBtn.classList.toggle('setMute');
+      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+    } else {
+      videoTrackMe.enabled = false;
+      MyMuteVideoBtn.classList.toggle('setMute');
+      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+    }
+  }
+
+
   // eslint-disable-next-line require-atomic-updates
   const peer = (window.peer = new Peer({
 
 
     // ここにAPI keyを入れてね★
-    key: '1b74af05-ac7f-4b24-a6ff-dedb7ce9ee54',
+    key: '1a50df5c-005b-4e50-be24-40dfabe6415c',
     debug: 3,
   }));
 
@@ -77,11 +117,63 @@ const Peer = window.Peer;
       newVideo.setAttribute('data-peer-id', stream.peerId);
       remoteVideos.append(newVideo);
       await newVideo.play().catch(console.error);
+
+      // 相手をミュートにする
+      // トラックを取り出す
+      var videoTrack = stream.getVideoTracks()[0];
+      var audioTrack = stream.getAudioTracks()[0];
+
+      const MuteVoiceBtn = document.getElementById('muteVoiceBtn');
+      const MuteVideoBtn = document.getElementById('muteVideoBtn');
+
+      MuteVoiceBtn.addEventListener('click', muteVoice);
+      MuteVideoBtn.addEventListener('click', muteVideo);
+
+      // Voiceのミュート切り替え
+      function muteVoice() {
+
+        if (MuteVoiceBtn.classList.contains('setMute')) {
+          audioTrack.enabled = true;
+          MuteVoiceBtn.classList.toggle('setMute');
+          MuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+        } else {
+          MuteVoiceBtn.classList.toggle('setMute');
+          audioTrack.enabled = false;
+          MuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+        }
+      }
+
+      // Videoのミュート切り替え
+      function muteVideo() {
+
+        if (MuteVideoBtn.classList.contains('setMute')) {
+          videoTrack.enabled = true;
+          MuteVideoBtn.classList.toggle('setMute');
+          MuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+        } else {
+          videoTrack.enabled = false;
+          MuteVideoBtn.classList.toggle('setMute');
+          MuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+        }
+      }
+
     });
 
     room.on('data', ({ data, src }) => {
       // Show a message sent to the room and who sent
       messages.textContent += `${src}: ${data}\n`;
+      // ここでCSSを変更！
+      console.log(`ここはデータ${data}`);
+      console.log(`ここはソース${src}`);
+
+      // dataにはvalueの値が入っている？
+      // ここで相手側のCSSを変更
+      if (data == 1) {
+        document.getElementById('js-remote-streams').style.filter = 'sepia()';
+      }
+
+
+
     });
 
     // for closing room members
@@ -107,7 +199,7 @@ const Peer = window.Peer;
       });
     });
 
-    // sendTrigger.addEventListener('click', onClickSend);
+    sendTrigger.addEventListener('click', onClickSend);
     leaveTrigger.addEventListener('click', () => room.close(), { once: true });
 
     function onClickSend() {
@@ -116,30 +208,23 @@ const Peer = window.Peer;
 
       messages.textContent += `${peer.id}: ${localText.value}\n`;
       localText.value = '';
-
-
     }
 
-    const anime = document.getElementById('anime');
-    let animetext = 0;
+    let valueCSS = "0";
 
-    const animebtn = document.getElementById('animebtn');
-    animebtn.addEventListener('click', animetion);
-    function animetion() {
-      animetext++;
-      room.send(animetext);
-    };
+    document.getElementById('testCss').addEventListener('click', changeCSS);
 
-    function anime1() {
-      anime.textContent += `${animetext}\n`;
-      anime.style.backgroundColor = '#00ffff';
-    };
+    function changeCSS() {
+      valueCSS = document.getElementById('testCss').value;
+      room.send(valueCSS);
+      console.log(`ここはCSS${valueCSS}`);
 
+      // ここで自分側のCSSを変更
+      if (valueCSS == 1) {
+        document.getElementById('js-local-stream').style.filter = 'sepia()';
+      }
+    }
 
-    if (messages.textContent == 1) {
-      anime.textContent += `${animetext}\n`;
-      anime.style.backgroundColor = '#00ffff';
-    };
 
 
 

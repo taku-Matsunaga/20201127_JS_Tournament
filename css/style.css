@@ -77,9 +77,9 @@
 
 .yourvideo{
   background-color: #dceef8;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: baseline; */
   width: 42%;
 }
 
@@ -89,7 +89,7 @@
 
 .remote-streams video{
   width: 100%;
-
+vertical-align: bottom;
 }
 
 /* チャットエリア */
@@ -99,14 +99,14 @@ width: 16%;
 height: 90vh;
 background-color: #bee1f5;
 display: flex;
-
 align-items: flex-end;
-
 }
+
 
 .input{
 height: 100px;
 background-color: cornflowerblue;
+
 }
 
 .chattext{
@@ -115,4 +115,91 @@ background-color: cornflowerblue;
   border: solid;
   border-width: 2px;
   border-color: darkblue;
+}
+
+
+
+.mybtn{
+  display: flex;
+}
+
+.voiceon{
+  background-image: url(../img/micon.png);
+  background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
+}
+
+.voiceon:hover{
+  opacity: 0.6;
+}
+
+.videoon{
+  background-image: url(../img/videoon.png);
+  background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
+}
+
+.videoon:hover{
+  opacity: 0.6;
+}
+
+.share{
+  background-image: url(../img/share.png);
+  background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
+}
+
+.share:hover{
+  opacity: 0.6;
+}
+
+.otherbtn{
+  display: flex;
+}
+
+/* フィルター機能 */
+
+.sepia{
+  background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
 }
