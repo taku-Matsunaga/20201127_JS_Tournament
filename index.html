@@ -1,41 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SkyWay - Room example</title>
-    <link rel="stylesheet" href="../_shared/style.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="heading">Room example</h1>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="img/otumami.ico">
+  <title>otsumami</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sanitize.css">
+  <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+
+  <!-- トップアニメーション -->
+  <div class="top1">
+    <img src="img/otumami.png" alt="logo" class="logo">
+    <div class="top2">
+    </div>
+    <div class="top3">
+    </div>
+  </div>
+
+  <!-- ビデオ、チャットエリア -->
+  <div class="container">
+
+    <div class="room">
+      <div class="video_box">
+
+        <div class="myvideo_box">
+          <video id="js-local-stream" class="myvideo"></video>
+        </div>
+
+        <div class="yourvideo">
+          <div class="remote-streams" id="js-remote-streams"></div>
+        </div>
+
+        <div class="messages_box">
+          <pre class="messages" id="js-messages"></pre>
+          <div class="input">
+            <input type="text" id="js-local-text" class="chattext">
+            <button id="js-send-trigger" class="chatbtn">Send</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ボタンエリア -->
+      <div>
+        <ul>
+          <li><button>cheer</button></li>
+          <li><button>★</button></li>
+          <li><button>💛</button></li>
+        </ul>
+        <li><button>video</button></li>
+        <li><button>mute</button></li>
+        <ul>
+          <ul>
+            <li><button>leave</button></li>
+            <li><button>leave</button></li>
+          </ul>
+
+        </ul>
+      </div>
+
+
+
       <p class="note">
         Change Room mode (before join in a room):
         <a href="#">mesh</a> / <a href="#sfu">sfu</a>
       </p>
-      <div class="room">
-        <div>
-          <video id="js-local-stream"></video>
-          <span id="js-room-mode"></span>:
-          <input type="text" placeholder="Room Name" id="js-room-id">
-          <button id="js-join-trigger">Join</button>
-          <button id="js-leave-trigger">Leave</button>
-        </div>
-
-        <div class="remote-streams" id="js-remote-streams"></div>
-
-        <div>
-          <pre class="messages" id="js-messages"></pre>
-          <input type="text" id="js-local-text">
-          <button id="js-send-trigger">Send</button>
-        </div>
-
-        <div id="testDiv">test</div>
+      <div>
+        <span id="js-room-mode"></span>:
+        <input type="text" placeholder="Room Name" id="js-room-id">
+        <button id="js-join-trigger">Join</button>
+        <button id="js-leave-trigger">Leave</button>
       </div>
-      <p class="meta" id="js-meta"></p>
     </div>
-    <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
-    <script src="../_shared/key.js"></script>
-    <script src="./script.js"></script>
-  </body>
+    <p class="meta" id="js-meta"></p>
+    <pre id="anime"></pre>
+    <button id="animebtn" value="1">anime</button>
+  </div>
+  <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
+  <script src="../_shared/key.js"></script>
+  <script src="script.js"></script>
+
+
+  <!-- 花火アニメーション -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js"></script>
+  <script src="js/particle.js"></script>
+  <script src="js/fireworks.js"></script>
+  <script src="js/skech.js"></script> -->
+</body>
+
 </html>
