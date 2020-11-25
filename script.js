@@ -39,12 +39,34 @@ const Peer = window.Peer;
   localVideo.playsInline = true;
   await localVideo.play().catch(console.error);
 
+    // 自分をミュートにする
+    // トラックを取り出す
+    var videoTrackMe = localStream.getVideoTracks()[0];
+    var audioTrackMe = localStream.getAudioTracks()[0];
+
+    document.getElementById('mymuteBtn').addEventListener('click', muteOn);
+    document.getElementById('myunmuteBtn').addEventListener('click', muteOff);
+
+    function muteOn(){
+      // muteする
+      videoTrackMe.enabled = false;
+      audioTrackMe.enabled = false;
+      console.log('クリックしました');
+    }
+
+    function muteOff(){
+      // unmuteする
+      videoTrackMe.enabled = true
+      audioTrackMe.enabled = true
+      console.log('クリックしました');
+    }
+
   // eslint-disable-next-line require-atomic-updates
   const peer = (window.peer = new Peer({
 
 
     // ここにAPI keyを入れてね★
-    key: '1b74af05-ac7f-4b24-a6ff-dedb7ce9ee54',
+    key: '1a50df5c-005b-4e50-be24-40dfabe6415c',
     debug: 3,
   }));
 
@@ -77,6 +99,29 @@ const Peer = window.Peer;
       newVideo.setAttribute('data-peer-id', stream.peerId);
       remoteVideos.append(newVideo);
       await newVideo.play().catch(console.error);
+
+    // 相手をミュートにする
+    // トラックを取り出す
+    var videoTrack = stream.getVideoTracks()[0];
+    var audioTrack = stream.getAudioTracks()[0];
+
+    document.getElementById('muteBtn').addEventListener('click', muteOn)
+    document.getElementById('unmuteBtn').addEventListener('click', muteOff)
+
+    function muteOn(){
+      // muteする
+      videoTrack.enabled = false;
+      audioTrack.enabled = false;
+      console.log('クリックしました');
+    }
+
+    function muteOff(){
+      // unmuteする
+      videoTrack.enabled = true
+      audioTrack.enabled = true
+      console.log('クリックしました');
+    }
+
     });
 
     room.on('data', ({ data, src }) => {
