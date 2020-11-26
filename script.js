@@ -80,6 +80,7 @@ const Peer = window.Peer;
       audioTrackMe.enabled = false;
       // MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
       MyMuteVoiceBtn.classList.toggle('voiceOff');
+
     }
   }
 
