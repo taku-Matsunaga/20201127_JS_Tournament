@@ -180,7 +180,7 @@ const Peer = window.Peer;
 
     room.on('data', ({ data, src }) => {
       // Show a message sent to the room and who sent
-      messages.textContent += `${src}: ${data}\n`;
+      messages.innerHTML += `<p>${peer.id}: ${localText.value}\n</p>`;
       // ここでCSSを変更！
       console.log(`ここはデータ${data}`);
       console.log(`ここはソース${src}`);
