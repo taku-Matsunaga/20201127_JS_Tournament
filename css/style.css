@@ -111,7 +111,7 @@ display: flex;
 
 .myvideo{
   width: 90%;
-  margin: 80px auto;
+  margin: 40px auto;
   border-radius: 30px;
   border:10px solid rgb(235, 232, 218);
   /* padding: 5px; */
@@ -136,7 +136,7 @@ display: flex;
   border: 10px solid rgb(245, 205, 205);
   /* padding: 5px; */
   box-sizing: border-box;
-  margin: 80px auto;
+  margin: 40px auto;
 }
 
 /* チャットエリア */
@@ -163,7 +163,7 @@ overflow: auto;
 .input{
 height: 100px;
 background-color: cornflowerblue;
-
+width: 100%;
 right: 0;
 bottom: 0;
 position: sticky;
