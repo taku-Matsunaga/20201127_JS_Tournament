@@ -88,7 +88,7 @@ const Peer = window.Peer;
     if (MyMuteVideoBtn.classList.contains('setMute')) {
       videoTrackMe.enabled = true;
       MyMuteVideoBtn.classList.toggle('setMute');
-      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+      MyMuteVideoBtn.style.backgroundImage = 'url(https://github.com/taku-Matsunaga/20201127_JS_Tournament_TeamMJMK/blob/main/img/videoon.png)'
     } else {
       videoTrackMe.enabled = false;
       MyMuteVideoBtn.classList.toggle('setMute');
@@ -167,7 +167,7 @@ const Peer = window.Peer;
         if (MuteVideoBtn.classList.contains('setMute')) {
           videoTrack.enabled = true;
           MuteVideoBtn.classList.toggle('setMute');
-          MuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+          MuteVideoBtn.style.backgroundImage = 'url(https://github.com/taku-Matsunaga/20201127_JS_Tournament_TeamMJMK/blob/main/img/videoon.png)'
         } else {
           videoTrack.enabled = false;
           MuteVideoBtn.classList.toggle('setMute');
