@@ -13,16 +13,3 @@
   
 }
 
-
-
-.messages:{
-  content: "";
-  position: absolute;
-  max-width: 100%;
-  bottom: -8px;
-  right: -8px;
-  margin-top: -15px;
-  border: 15px solid transparent;
-  border-left: 15px solid #ffcc75;
-  
-}

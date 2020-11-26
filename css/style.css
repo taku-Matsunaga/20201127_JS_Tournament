@@ -146,7 +146,7 @@ height:100%;
 display: flex;
 flex-direction: column;
 width: 24%;
-background-color: #bee1f5;
+background-color: #eee7c2;
 align-items: flex-end;
 bottom:0px;
 position: relative;
@@ -162,7 +162,7 @@ overflow: auto;
 
 .input{
 height: 100px;
-background-color: cornflowerblue;
+background-color: #eee7c2;
 width: 100%;
 right: 0;
 bottom: 0;
@@ -196,7 +196,18 @@ position: sticky;
 }
 
 .fas{
-  font-size: 2rem;;
+  font-size: 2rem;
+  color: #ee7315;
+}
+
+.exit{
+  background-color: white;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
 }
 
 .voiceon{
