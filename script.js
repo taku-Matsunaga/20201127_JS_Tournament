@@ -30,11 +30,11 @@ const Peer = window.Peer;
 
 
 
-
-  meta.innerText = `
-    UA: ${navigator.userAgent}
-    SDK: ${sdkSrc ? sdkSrc.src : 'unknown'}
-  `.trim();
+// メタデータの格納
+  // meta.innerText = `
+  //   UA: ${navigator.userAgent}
+  //   SDK: ${sdkSrc ? sdkSrc.src : 'unknown'}
+  // `.trim();
 
   const getRoomModeByHash = () => (location.hash === '#sfu' ? 'sfu' : 'mesh');
 
@@ -180,7 +180,7 @@ const Peer = window.Peer;
 
     room.on('data', ({ data, src }) => {
       // Show a message sent to the room and who sent
-      messages.innerHTML += `<p>${peer.id}: ${localText.value}\n</p>`;
+      messages.innerHTML += `<p>${src}: ${data}\n</p>`;
       // ここでCSSを変更！
       console.log(`ここはデータ${data}`);
       console.log(`ここはソース${src}`);
@@ -195,9 +195,16 @@ const Peer = window.Peer;
         document.getElementById('js-remote-streams').style.filter = 'blur(2px)';
       } else if (data == 'Change filter to beautify') {
         document.getElementById('js-remote-streams').style.filter = 'contrast(110%) saturate(130%) brightness(130%)';
+      } else if(data == 'Cheers!'){
+        const beerStyle = document.getElementById('beeranime');  
+        if (beerStyle.classList.contains('setDisp')){
+          beerStyle.style.display = 'none';
+          beerStyle.classList.toggle('setDisp');
+        }else{
+          beerStyle.style.display = 'block';
+          beerStyle.classList.toggle('setDisp');
+        }
       }
-
-      // ビール未実装
 
     });
 
@@ -241,7 +248,7 @@ const Peer = window.Peer;
     document.getElementById('testCss2').addEventListener('click', changeCSS2);
     document.getElementById('testCss3').addEventListener('click', changeCSS3);
     document.getElementById('testCss4').addEventListener('click', changeCSS4);
-    document.getElementById('testCss5').addEventListener('click', changeCSS5);
+    document.getElementById('aniCssBeer').addEventListener('click', dispCSSBeer);
 
     function changeCSS1() {
       valueCSS = document.getElementById('testCss1').value;
@@ -279,23 +286,21 @@ const Peer = window.Peer;
       }
     }
 
-    // 未実装ビール
-    function changeCSS5() {
-      valueCSS = document.getElementById('testCss5').value;
-      const beerstyle = document.getElementById('beeranime').style.display;
+    // ビール
+    function dispCSSBeer() {
+      valueCSS = document.getElementById('aniCssBeer').value;
+      const beerStyle = document.getElementById('beeranime');
       room.send(valueCSS);
       console.log(`ここはCSS${valueCSS}`);
-      if (valueCSS == 'Cheer') {
-        if (beerstyle == 'none') {
-          beerstyle = '';
-        } else if (beerstyle == '') {
-          beerstyle = 'none';
-        };
-      };
+
+      if (beerStyle.classList.contains('setDisp')){
+        beerStyle.style.display = 'none';
+        beerStyle.classList.toggle('setDisp');
+      }else{
+        beerStyle.style.display = 'block';
+        beerStyle.classList.toggle('setDisp');
+      }
     }
-
-
-
 
   });
 
