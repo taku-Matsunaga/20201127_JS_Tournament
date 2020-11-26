@@ -73,12 +73,12 @@ const Peer = window.Peer;
     if (MyMuteVoiceBtn.classList.contains('setMute')) {
       audioTrackMe.enabled = true;
       MyMuteVoiceBtn.classList.toggle('setMute');
-      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+      MyMuteVoiceBtn.style.backgroundImage = 'url(https://github.com/taku-Matsunaga/20201127_JS_Tournament_TeamMJMK/blob/main/img/micon.png)'
       
     } else {
       MyMuteVoiceBtn.classList.toggle('setMute');
       audioTrackMe.enabled = false;
-      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+      MyMuteVoiceBtn.style.backgroundImage = 'url(https://github.com/taku-Matsunaga/20201127_JS_Tournament_TeamMJMK/blob/main/img/micoff.png)'
     }
   }
 
@@ -92,7 +92,7 @@ const Peer = window.Peer;
     } else {
       videoTrackMe.enabled = false;
       MyMuteVideoBtn.classList.toggle('setMute');
-      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+      MyMuteVideoBtn.style.backgroundImage = 'url(https://github.com/taku-Matsunaga/20201127_JS_Tournament_TeamMJMK/blob/main/img/videooff.png)'
     }
   }
 
@@ -153,11 +153,11 @@ const Peer = window.Peer;
         if (MuteVoiceBtn.classList.contains('setMute')) {
           audioTrack.enabled = true;
           MuteVoiceBtn.classList.toggle('setMute');
-          MuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+          MuteVoiceBtn.style.backgroundImage = 'url(https://github.com/taku-Matsunaga/20201127_JS_Tournament_TeamMJMK/blob/main/img/micon.png)'
         } else {
           MuteVoiceBtn.classList.toggle('setMute');
           audioTrack.enabled = false;
-          MuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+          MuteVoiceBtn.style.backgroundImage = 'url(https://github.com/taku-Matsunaga/20201127_JS_Tournament_TeamMJMK/blob/main/img/micoff.png)'
         }
       }
 
@@ -171,7 +171,7 @@ const Peer = window.Peer;
         } else {
           videoTrack.enabled = false;
           MuteVideoBtn.classList.toggle('setMute');
-          MuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+          MuteVideoBtn.style.backgroundImage = 'url(https://github.com/taku-Matsunaga/20201127_JS_Tournament_TeamMJMK/blob/main/img/videooff.png)'
         }
       }
 
