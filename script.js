@@ -73,12 +73,13 @@ const Peer = window.Peer;
     if (MyMuteVoiceBtn.classList.contains('setMute')) {
       audioTrackMe.enabled = true;
       MyMuteVoiceBtn.classList.toggle('setMute');
-      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
-      
+      // MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+      MyMuteVoiceBtn.classList.toggle('voiceOff');
     } else {
       MyMuteVoiceBtn.classList.toggle('setMute');
       audioTrackMe.enabled = false;
-      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+      // MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+      MyMuteVoiceBtn.classList.toggle('voiceOff');
     }
   }
 
@@ -88,11 +89,13 @@ const Peer = window.Peer;
     if (MyMuteVideoBtn.classList.contains('setMute')) {
       videoTrackMe.enabled = true;
       MyMuteVideoBtn.classList.toggle('setMute');
-      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+      // MyMuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+      MyMuteVideoBtn.classList.toggle('videoIconOff')
     } else {
       videoTrackMe.enabled = false;
       MyMuteVideoBtn.classList.toggle('setMute');
-      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+      // MyMuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+      MyMuteVideoBtn.classList.toggle('videoIconOff')
     }
   }
 
@@ -153,11 +156,13 @@ const Peer = window.Peer;
         if (MuteVoiceBtn.classList.contains('setMute')) {
           audioTrack.enabled = true;
           MuteVoiceBtn.classList.toggle('setMute');
-          MuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+          // MuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+          MuteVoiceBtn.classList.toggle('voiceOff');
         } else {
           MuteVoiceBtn.classList.toggle('setMute');
           audioTrack.enabled = false;
-          MuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+          // MuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+          MuteVoiceBtn.classList.toggle('voiceOff');
         }
       }
 
@@ -167,11 +172,13 @@ const Peer = window.Peer;
         if (MuteVideoBtn.classList.contains('setMute')) {
           videoTrack.enabled = true;
           MuteVideoBtn.classList.toggle('setMute');
-          MuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+          // MuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+          MuteVideoBtn.classList.toggle('videoIconOff')
         } else {
           videoTrack.enabled = false;
           MuteVideoBtn.classList.toggle('setMute');
-          MuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+          // MuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+          MuteVideoBtn.classList.toggle('videoIconOff')
         }
       }
 
