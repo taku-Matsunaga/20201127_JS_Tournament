@@ -1,14 +1,57 @@
+/* ページを重ねる */
+.body{
+  width: 100%;
+  height: 100vh;
+}
+
+/* js(#top_animetion)で変更 */
+.top1{
+margin: 0%;
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+
+.logo{
+  position: absolute;
+  width: auto;
+  height: 30%;
+  z-index: 15;
+}
+
+
+.container{
+position: absolute;
+z-index: 10;
+width: 100%;
+height: 100vh;
+display: flex;
+}
+
+.room{
+  width: 100%;
+}
+
+
+
+
+
 /* オープニングアニメーション */
 
 .top3{
   background-image: url(../img/top.jpg);
+  background-color: #ffffff;
   background-size:cover;
   width: 100%;
   height: 100vh;
   animation: fadeIn 7s ease 0.3s 1 normal;
-  z-index: 1;
   opacity: 0;
   position: absolute;
+  z-index: 14;
 }
 
 @keyframes fadeIn { 
@@ -20,40 +63,23 @@
 
 .top2{
   background-image: url(../img/IMG_3040.jpg);
+  background-color: #ffffff;
   background-size:cover;
   width: 100%;
   height: 100vh;
   animation: fadeIn 7s ease 7s 1 normal;
-  z-index: 1;
   opacity: 0;
   position: absolute;
+  z-index: 13;
 }
 
-/* @keyframes fadeIn {
-  0% {opacity: 0} 
-  50% {opacity: 1;}
-  100% {opacity: 0;
-  } 
-} */
-
-.top3{
+.top4{
   background-color: #ffffff;
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  z-index: 11;
 }
 
-.logo{
-  position: absolute;
-  margin-left: 42%;
-  margin-top: 15%;
-  width: auto;
-  height: 30%;
-  z-index: 3;
-}
 
 
 /* ビデオエリア */
@@ -62,25 +88,25 @@
   display: flex;
   justify-content: space-around;  
   width: 100%;
+  height: 85vh;
 }
 
 .myvideo_box{
   background-color: #dceef8;
   display: flex;
   flex-direction: column;
-  width: 38%;
+  width: 50%;
+
 }
 
 .myvideo{
   width: 100%;
+
 }
 
 .yourvideo{
   background-color: #dceef8;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  width: 38%;
+  width: 50%;
 }
 
 .remote-streams{
@@ -89,14 +115,15 @@
 
 .remote-streams video{
   width: 100%;
-
+vertical-align: bottom;
 }
 
 /* チャットエリア */
 
 .messages_box{
+
 width: 24%;
-height: 90vh;
+height: 98vh;
 background-color: #bee1f5;
 align-items: flex-end;
 bottom:0px;
@@ -110,12 +137,15 @@ flex-direction: column;
 /* 全体を指定しているmessages_boxでまずflex-direction: column指定後に*/
 /* 固定したいボタンや要素をposition: sticky と入れる！ */
 
+
 .input{
 height: 100px;
 background-color: cornflowerblue;
+
 right:50px;
 bottom:0px;
 position: sticky;
+
 }
 
 /* テキストエリアを動かなくするにはこいつをどうにか指定する */
@@ -128,4 +158,107 @@ position: sticky;
   border-color: darkblue;
   position: sticky;
   
+}
+
+
+/* ボタンエリア */
+.mybtn{
+  display: flex;
+}
+
+.voiceon{
+  background-image: url(../img/micon.png);
+  background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
+}
+
+.voiceon:hover{
+  opacity: 0.6;
+}
+
+.videoon{
+  background-image: url(../img/videoon.png);
+  background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
+}
+
+.videoon:hover{
+  opacity: 0.6;
+}
+
+.share{
+  background-image: url(../img/share.png);
+  background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
+}
+
+.share:hover{
+  opacity: 0.6;
+}
+
+.otherbtn{
+  display: flex;
+}
+
+/* フィルター機能 */
+
+.sepia{
+  background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
+}
+
+.filter_box{
+   background-size:cover;
+  width: 60px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #ee7315;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; 
+
 }
