@@ -13,6 +13,24 @@ const Peer = window.Peer;
   const meta = document.getElementById('js-meta');
   const sdkSrc = document.querySelector('script[src*=skyway]');
 
+  // top画面をクリック
+  const container = document.getElementById('container');
+  const logo = document.getElementById('logo');
+  const top2 = document.getElementById('top2');
+  const top3 = document.getElementById('top3');
+  const top4 = document.getElementById('top4');
+
+  logo.onclick = function () {
+    logo.style.zIndex = 5;
+    top2.style.zIndex = 4;
+    top3.style.zIndex = 3;
+    top4.style.zIndex = 2;
+    container.style.zIndex = 20;
+  };
+
+
+
+
   meta.innerText = `
     UA: ${navigator.userAgent}
     SDK: ${sdkSrc ? sdkSrc.src : 'unknown'}
@@ -168,8 +186,14 @@ const Peer = window.Peer;
 
       // dataにはvalueの値が入っている？
       // ここで相手側のCSSを変更
-      if (data == 1) {
+      if (data == 'Change filter to sepia') {
         document.getElementById('js-remote-streams').style.filter = 'sepia()';
+      } else if (data == 'Change filter to grayscale') {
+        document.getElementById('js-remote-streams').style.filter = 'grayscale()';
+      } else if (data == 'Change filter to blur') {
+        document.getElementById('js-remote-streams').style.filter = 'blur(2px)';
+      } else if (data == 'Change filter to beautify') {
+        document.getElementById('js-remote-streams').style.filter = 'contrast(110%) saturate(130%) brightness(130%)';
       }
 
 
@@ -212,16 +236,44 @@ const Peer = window.Peer;
 
     let valueCSS = "0";
 
-    document.getElementById('testCss').addEventListener('click', changeCSS);
+    document.getElementById('testCss1').addEventListener('click', changeCSS1);
+    document.getElementById('testCss2').addEventListener('click', changeCSS2);
+    document.getElementById('testCss3').addEventListener('click', changeCSS3);
+    document.getElementById('testCss4').addEventListener('click', changeCSS4);
 
-    function changeCSS() {
-      valueCSS = document.getElementById('testCss').value;
+    function changeCSS1() {
+      valueCSS = document.getElementById('testCss1').value;
       room.send(valueCSS);
       console.log(`ここはCSS${valueCSS}`);
 
       // ここで自分側のCSSを変更
-      if (valueCSS == 1) {
+      if (valueCSS == 'Change filter to sepia') {
         document.getElementById('js-local-stream').style.filter = 'sepia()';
+      }
+    }
+
+    function changeCSS2() {
+      valueCSS = document.getElementById('testCss2').value;
+      room.send(valueCSS);
+      console.log(`ここはCSS${valueCSS}`);
+      if (valueCSS == 'Change filter to grayscale') {
+        document.getElementById('js-local-stream').style.filter = 'grayscale()';
+      }
+    }
+    function changeCSS3() {
+      valueCSS = document.getElementById('testCss3').value;
+      room.send(valueCSS);
+      console.log(`ここはCSS${valueCSS}`);
+      if (valueCSS == 'Change filter to blur') {
+        document.getElementById('js-local-stream').style.filter = 'blur(2px)';
+      }
+    }
+    function changeCSS4() {
+      valueCSS = document.getElementById('testCss4').value;
+      room.send(valueCSS);
+      console.log(`ここはCSS${valueCSS}`);
+      if (valueCSS == 'Change filter to beautify') {
+        document.getElementById('js-local-stream').style.filter = 'contrast(110%) saturate(130%) brightness(130%)';
       }
     }
 

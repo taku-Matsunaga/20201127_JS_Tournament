@@ -12,72 +12,79 @@
   <link rel="stylesheet" href="css/reset.css">
 </head>
 
-<body>
+<body class="body">
 
   <!-- トップアニメーション -->
   <div class="top1">
-    <img src="img/otumami.png" alt="logo" class="logo">
-    <div class="top2">
-    </div>
-    <div class="top3">
-    </div>
-  </div>
+    <img src="img/otumami.png" alt="logo" class="logo" id="logo">
+    <div class="top2" id="top2"></div>
+    <div class="top3" id="top3"></div>
+    <div class="top4" id="top4"></div>
 
-  <!-- ビデオ、チャットエリア -->
-  <div class="container">
+    <!-- ビデオ、チャットエリア -->
+    <div class="container">
 
-    <div class="room">
-      <div class="video_box">
+      <div class="room">
+        <div>
+          <p class="note">
+            Change Room mode (before join in a room):
+            <a href="#">mesh</a> / <a href="#sfu">sfu</a>
+          </p>
+          <div>
+            <span id="js-room-mode"></span>:
+            <input type="text" placeholder="Room Name" id="js-room-id">
+            <button id="js-join-trigger">Join</button>
 
-        <div class="myvideo_box">
-          <video id="js-local-stream" class="myvideo"></video>
-          <!-- 自分のボタン -->
-          <div class="mybtn">
-            <button type="button" id="testCss" value="1" class="sepia"></button>
-            <button type="button" id="MyMuteVoiceBtn" class="voiceon"></button>
-            <button type="button" id="MyMuteVideoBtn" class="videoon"></button>
-            <button class="share"></button>
           </div>
-
+          <p class="meta" id="js-meta"></p>
         </div>
 
-        <div class="yourvideo">
-          <div class="remote-streams" id="js-remote-streams"></div>
-          <!-- 相手のボタン -->
 
-          <div class="otherbtn">
-            <button type="button" id="muteVoiceBtn" class="voiceon"></button>
-            <button type="button" id="muteVideoBtn" class="videoon"></button>
-          </div>
-        </div>
+        <div class="video_box">
 
-        <div class="messages_box">
-          <pre class="messages" id="js-messages"></pre>
-          <div class="input">
-            <input type="text" id="js-local-text" class="chattext">
-            <button id="js-send-trigger" class="chatbtn">Send</button>
+          <div class="myvideo_box">
+            <video id="js-local-stream" class="myvideo"></video>
+            <!-- 自分のボタン -->
+            <div class="mybtn">
+              <button type="button" id="MyMuteVoiceBtn" class="voiceon"></button>
+              <button type="button" id="MyMuteVideoBtn" class="videoon"></button>
+              <button class="share"></button>
+              <button id="js-leave-trigger">Leave</button>
+            </div>
+            <div class="mybtn">
+              <button type="button" id="testCss1" value="Change filter to sepia" class="sepia"></button>
+              <button type="button" id="testCss2" value="Change filter to grayscale" class="sepia"></button>
+              <button type="button" id="testCss3" value="Change filter to blur" class="sepia"></button>
+              <button type="button" id="testCss4" value="Change filter to beautify" class="sepia"></button>
+            </div>
+
           </div>
+
+          <div class="yourvideo">
+            <div class="remote-streams" id="js-remote-streams"></div>
+            <!-- 相手のボタン -->
+
+            <div class="otherbtn">
+              <button type="button" id="muteVoiceBtn" class="voiceon"></button>
+              <button type="button" id="muteVideoBtn" class="videoon"></button>
+            </div>
+          </div>
+
+
         </div>
 
       </div>
 
-
-
-
-      <p class="note">
-        Change Room mode (before join in a room):
-        <a href="#">mesh</a> / <a href="#sfu">sfu</a>
-      </p>
-      <div>
-        <span id="js-room-mode"></span>:
-        <input type="text" placeholder="Room Name" id="js-room-id">
-        <button id="js-join-trigger">Join</button>
-        <button id="js-leave-trigger">Leave</button>
+      <div class="messages_box">
+        <pre class="messages" id="js-messages"></pre>
+        <div class="input">
+          <input type="text" id="js-local-text" class="chattext">
+          <button id="js-send-trigger" class="chatbtn">Send</button>
+        </div>
       </div>
+
+
     </div>
-    <p class="meta" id="js-meta"></p>
-    <pre id="anime"></pre>
-    <button id="animebtn" value="1">anime</button>
   </div>
   <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
   <script src="../_shared/key.js"></script>
