@@ -231,7 +231,7 @@ const Peer = window.Peer;
       // Send message to all of the peers in the room via websocket
       room.send(localText.value);
 
-      messages.textContent += `${peer.id}: ${localText.value}\n`;
+      messages.innerHTML += `<p>${peer.id}: ${localText.value}\n</p>`;
       localText.value = '';
     }
 

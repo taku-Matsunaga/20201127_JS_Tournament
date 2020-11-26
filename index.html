@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sanitize.css">
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/chat.css">
 </head>
 
 <body class="body">
@@ -64,6 +65,7 @@
             <div class="remote-streams" id="js-remote-streams"></div>
             <!-- 相手のボタン -->
 
+
             <div class="otherbtn">
               <button type="button" id="muteVoiceBtn" class="voiceon"></button>
               <button type="button" id="muteVideoBtn" class="videoon"></button>
@@ -75,11 +77,11 @@
 
       </div>
 
-      <div class="messages_box">
-        <pre class="messages" id="js-messages"></pre>
-        <div class="input">
-          <input type="text" id="js-local-text" class="chattext">
-          <button id="js-send-trigger" class="chatbtn">Send</button>
+        <div class="messages_box">
+          <div class="messages" id="js-messages" style="width: 90%; margin: auto;"></div>
+          <div class="input">
+            <input type="text" id="js-local-text" class="chattext">
+            <button id="js-send-trigger" class="chatbtn">Send</button>
         </div>
       </div>
 
