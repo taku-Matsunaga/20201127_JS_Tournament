@@ -141,10 +141,14 @@ display: flex;
 
 /* チャットエリア */
 
+.messages_outer{
+  width: 24%;
+}
+
 .messages_box{
 
-width: 24%;
-height: 98vh;
+/* width: 24%; */
+height: 80vh;
 background-color: #bee1f5;
 align-items: flex-end;
 bottom:0px;
