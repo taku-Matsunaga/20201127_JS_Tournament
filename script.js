@@ -73,12 +73,12 @@ const Peer = window.Peer;
     if (MyMuteVoiceBtn.classList.contains('setMute')) {
       audioTrackMe.enabled = true;
       MyMuteVoiceBtn.classList.toggle('setMute');
-      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
-
+      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+      
     } else {
       MyMuteVoiceBtn.classList.toggle('setMute');
       audioTrackMe.enabled = false;
-      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+      MyMuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
     }
   }
 
@@ -88,11 +88,11 @@ const Peer = window.Peer;
     if (MyMuteVideoBtn.classList.contains('setMute')) {
       videoTrackMe.enabled = true;
       MyMuteVideoBtn.classList.toggle('setMute');
-      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
     } else {
       videoTrackMe.enabled = false;
       MyMuteVideoBtn.classList.toggle('setMute');
-      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
     }
   }
 
