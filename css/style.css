@@ -83,8 +83,18 @@ display: flex;
 
 
 /* ビデオエリア */
+.anime_video_box{
+  position: relative;
+  width: 100%;
+}
+
+.animetion_box{
+  position: absolute;
+  width: 100%;
+}
 
 .video_box{
+  position: absolute;
   display: flex;
   justify-content: space-around;  
   width: 100%;
@@ -262,3 +272,40 @@ position: sticky;
   appearance: none; 
 
 }
+
+/* アニメーション */
+.beeranime{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.beer,.beer2,.beer3{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 30;
+}
+
+.beer{
+   animation: beerx 2s ease 0.3s infinite normal;
+}
+@keyframes beerx { 
+  0%{ top: auto;}
+  100%{ top: +10px;}
+}
+
+.beer2{
+   animation: beery 2s ease 0.3s infinite normal;
+}
+.beer3{
+   animation: beery 2.5s ease 0.3s infinite normal;
+}
+
+@keyframes beery { 
+  0% {opacity: 0}
+  50% {opacity: 1;}
+  100% {opacity: 0;
+  } 
+}
+

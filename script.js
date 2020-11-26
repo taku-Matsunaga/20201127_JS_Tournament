@@ -88,11 +88,11 @@ const Peer = window.Peer;
     if (MyMuteVideoBtn.classList.contains('setMute')) {
       videoTrackMe.enabled = true;
       MyMuteVideoBtn.classList.toggle('setMute');
-      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
+      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
     } else {
       videoTrackMe.enabled = false;
       MyMuteVideoBtn.classList.toggle('setMute');
-      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videooff.png)'
+      MyMuteVideoBtn.style.backgroundImage = 'url(../img/videoon.png)'
     }
   }
 
@@ -153,11 +153,11 @@ const Peer = window.Peer;
         if (MuteVoiceBtn.classList.contains('setMute')) {
           audioTrack.enabled = true;
           MuteVoiceBtn.classList.toggle('setMute');
-          MuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
+          MuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
         } else {
           MuteVoiceBtn.classList.toggle('setMute');
           audioTrack.enabled = false;
-          MuteVoiceBtn.style.backgroundImage = 'url(../img/micon.png)'
+          MuteVoiceBtn.style.backgroundImage = 'url(../img/micoff.png)'
         }
       }
 
@@ -197,7 +197,7 @@ const Peer = window.Peer;
         document.getElementById('js-remote-streams').style.filter = 'contrast(110%) saturate(130%) brightness(130%)';
       }
 
-
+      // ビール未実装
 
     });
 
@@ -241,6 +241,7 @@ const Peer = window.Peer;
     document.getElementById('testCss2').addEventListener('click', changeCSS2);
     document.getElementById('testCss3').addEventListener('click', changeCSS3);
     document.getElementById('testCss4').addEventListener('click', changeCSS4);
+    document.getElementById('testCss5').addEventListener('click', changeCSS5);
 
     function changeCSS1() {
       valueCSS = document.getElementById('testCss1').value;
@@ -276,6 +277,21 @@ const Peer = window.Peer;
       if (valueCSS == 'Change filter to beautify') {
         document.getElementById('js-local-stream').style.filter = 'contrast(110%) saturate(130%) brightness(130%)';
       }
+    }
+
+    // 未実装ビール
+    function changeCSS5() {
+      valueCSS = document.getElementById('testCss5').value;
+      const beerstyle = document.getElementById('beeranime').style.display;
+      room.send(valueCSS);
+      console.log(`ここはCSS${valueCSS}`);
+      if (valueCSS == 'Cheer') {
+        if (beerstyle == 'none') {
+          beerstyle = '';
+        } else if (beerstyle == '') {
+          beerstyle = 'none';
+        };
+      };
     }
 
 
