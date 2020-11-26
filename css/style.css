@@ -68,7 +68,7 @@
   background-color: #dceef8;
   display: flex;
   flex-direction: column;
-  width: 42%;
+  width: 38%;
 }
 
 .myvideo{
@@ -80,7 +80,7 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
-  width: 42%;
+  width: 38%;
 }
 
 .remote-streams{
@@ -95,24 +95,37 @@
 /* チャットエリア */
 
 .messages_box{
-width: 16%;
+width: 24%;
 height: 90vh;
 background-color: #bee1f5;
-display: flex;
-
 align-items: flex-end;
-
+bottom:0px;
+position: relative;
+overflow: auto; 
+flex-direction: column;
+/* flex-end という指定がメッセージボックスの青背景を一番右に持ってきてくれる */
 }
+
+/* inputボタンを動かなくするにはこいつをどうにか指定する */
+/* 全体を指定しているmessages_boxでまずflex-direction: column指定後に*/
+/* 固定したいボタンや要素をposition: sticky と入れる！ */
 
 .input{
 height: 100px;
 background-color: cornflowerblue;
+right:50px;
+bottom:0px;
+position: sticky;
 }
 
+/* テキストエリアを動かなくするにはこいつをどうにか指定する */
 .chattext{
   height: 60px;
   width: 100%;
+  bottom:0px;
   border: solid;
   border-width: 2px;
   border-color: darkblue;
+  position: sticky;
+  
 }

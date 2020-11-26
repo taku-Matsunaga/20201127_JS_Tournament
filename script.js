@@ -107,14 +107,14 @@ const Peer = window.Peer;
       });
     });
 
-    // sendTrigger.addEventListener('click', onClickSend);
+    sendTrigger.addEventListener('click', onClickSend);
     leaveTrigger.addEventListener('click', () => room.close(), { once: true });
 
     function onClickSend() {
       // Send message to all of the peers in the room via websocket
       room.send(localText.value);
 
-      messages.textContent += `${peer.id}: ${localText.value}\n`;
+      messages.innerHTML += `<p>${peer.id}: ${localText.value}\n</p>`;
       localText.value = '';
 
 

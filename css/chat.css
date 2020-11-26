@@ -1,0 +1,28 @@
+.messages p {
+  position: relative;
+  display: inline-block;
+  margin: 5px auto;
+  padding: 17px 13px;
+  border-radius: 12px;
+  max-width: 100%;
+  line-height: 20px;
+  text-align: center;
+  color: #FFF;
+  font-size: 15px;
+  background: #ffcc75;
+  
+}
+
+
+
+.messages:{
+  content: "";
+  position: absolute;
+  max-width: 100%;
+  bottom: -8px;
+  right: -8px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #ffcc75;
+  
+}
