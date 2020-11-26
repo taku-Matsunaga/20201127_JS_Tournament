@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/sanitize.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/chat.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 
 <body class="body">
@@ -23,7 +24,7 @@
     <div class="top4" id="top4"></div>
 
     <!-- ビデオ、チャットエリア -->
-    <div class="container">
+    <div class="container" id="container">
 
       <div class="room">
         <div>
@@ -34,7 +35,7 @@
           <div>
             <span id="js-room-mode"></span>:
             <input type="text" placeholder="Room Name" id="js-room-id">
-            <button id="js-join-trigger">Join</button>
+            <button id="js-join-trigger">入室</button>
 
           </div>
           <p class="meta" id="js-meta"></p>
@@ -42,8 +43,8 @@
 
         <div class="anime_video_box">
           <div class="animetion_box" >
-            <div class="beeranime" >
-              <img src="img/beer.png" alt="" class="beer" id="beeranime">
+            <div class="beeranime" id="beeranime">
+              <img src="img/beer.png" alt="" class="beer">
               <img src="img/beer2.png" alt="" class="beer2">
               <img src="img/beer3.png" alt="" class="beer3">
             </div>
@@ -55,18 +56,23 @@
             <div class="myvideo_box">
               <video id="js-local-stream" class="myvideo"></video>
               <!-- 自分のボタン -->
-              <div class="mybtn">
-                <button type="button" id="MyMuteVoiceBtn" class="voiceon"></button>
-                <button type="button" id="MyMuteVideoBtn" class="videoon"></button>
-                <button class="share"></button>
-                <button id="js-leave-trigger">Leave</button>
-              </div>
-              <div class="mybtn">
-                <button type="button" id="testCss1" value="Change filter to sepia" class="sepia"></button>
-                <button type="button" id="testCss2" value="Change filter to grayscale" class="sepia"></button>
-                <button type="button" id="testCss3" value="Change filter to blur" class="sepia"></button>
-                <button type="button" id="testCss4" value="Change filter to beautify" class="sepia"></button>
-                <button type="button" id="testCss5" value="Cheer" class="sepia"></button>
+              <div class="btnContainer">
+                <div class="mybtn">
+                  <button type="button" id="MyMuteVoiceBtn" class="voiceon btnMargin"></button>
+                  <button type="button" id="MyMuteVideoBtn" class="videoon btnMargin"></button>
+                  <!-- <button class="share btnMargin"></button> -->
+                  <button id="js-leave-trigger" class="btnMargin">退室</button>
+                </div>
+                <div class="mybtn">
+                  <button type="button" id="testCss1" value="Change filter to sepia" class="sepia">1</button>
+                  <button type="button" id="testCss2" value="Change filter to grayscale" class="sepia">2</button>
+                  <button type="button" id="testCss3" value="Change filter to blur" class="sepia">3</button>
+                  <button type="button" id="testCss4" value="Change filter to beautify" class="sepia">4</button>
+                  <button type="button" id="testCss5" value="Cheer" class="sepia">5</button>
+                </div>
+                <div class="mybtn">
+                  <button type="button" id="aniCssBeer" value="Cheers!" class="sepia"><i class="fas fa-beer"></i></button>
+                </div>
               </div>
             </div>
 
@@ -77,8 +83,8 @@
 
 
               <div class="otherbtn">
-                <button type="button" id="muteVoiceBtn" class="voiceon"></button>
-                <button type="button" id="muteVideoBtn" class="videoon"></button>
+                <button type="button" id="muteVoiceBtn" class="voiceon btnMargin"></button>
+                <button type="button" id="muteVideoBtn" class="videoon btnMargin"></button>
               </div>
             </div>
 
