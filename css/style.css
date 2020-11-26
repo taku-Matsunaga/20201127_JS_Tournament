@@ -106,21 +106,22 @@ display: flex;
   display: flex;
   flex-direction: column;
   width: 50%;
-
+  background-image: url("../img/haikei2.png");
 }
 
 .myvideo{
   width: 90%;
   margin: 80px auto;
   border-radius: 30px;
-  border: 3px solid lightskyblue;
-  padding: 5px;
+  border:10px solid rgb(235, 232, 218);
+  /* padding: 5px; */
   box-sizing: border-box;
 }
 
 .yourvideo{
   background-color: #dceef8;
   width: 50%;
+    background-image: url("../img/haikei2.png");
 }
 
 .remote-streams{
@@ -132,8 +133,8 @@ display: flex;
   width: 100%;
   vertical-align: bottom;
   border-radius: 30px;
-  border: 3px solid pink;
-  padding: 5px;
+  border: 10px solid rgb(245, 205, 205);
+  /* padding: 5px; */
   box-sizing: border-box;
   margin: 80px auto;
 }
@@ -267,7 +268,7 @@ position: sticky;
   background-size:cover;
   width: 60px;
   height: 50px;
-  background-color: #ffffff;
+  background-color: rgb(235, 232, 218);
   border: solid;
   border-width: 2px;
   border-color: #ee7315;
