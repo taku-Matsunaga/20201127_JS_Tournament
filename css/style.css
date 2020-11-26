@@ -142,15 +142,16 @@ display: flex;
 /* チャットエリア */
 
 .messages_box{
-
+height:100%;
+display: flex;
+flex-direction: column;
 width: 24%;
-height: 98vh;
 background-color: #bee1f5;
 align-items: flex-end;
 bottom:0px;
 position: relative;
 overflow: auto; 
-flex-direction: column;
+
 /* flex-end という指定がメッセージボックスの青背景を一番右に持ってきてくれる */
 }
 
@@ -163,8 +164,8 @@ flex-direction: column;
 height: 100px;
 background-color: cornflowerblue;
 
-right:50px;
-bottom:0px;
+right: 0;
+bottom: 0;
 position: sticky;
 
 }
@@ -173,12 +174,13 @@ position: sticky;
 .chattext{
   height: 60px;
   width: 100%;
-  bottom:0px;
   border: solid;
   border-width: 2px;
   border-color: darkblue;
   position: sticky;
-  
+  right: 0;
+  bottom: 0;
+
 }
 
 
